@@ -1,21 +1,26 @@
 import { useEffect, useState } from "react";
 import { getCategories } from "../../api/category";
-import { getProduct } from "../../api/product";
+import { getProductByCategory } from "../../api/product";
 import CategoryCard from "../../components/CategoryCard";
 import ProductCard from "../../components/ProductCard";
+import WarrantyCard from "../../components/WarrantyCard";
 
 const Home = ({}) => {
   const [categorys, setCategorys] = useState([]);
   const [products, setProducts] = useState([]);
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(4);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     getCategories().then((res: any) => {
       setCategorys(res.data);
     });
-    getProduct().then((res: any) => {
-      setProducts(res.data);
+    getProductByCategory(page, limit, 0, "id", "asc").then((res: any) => {
+      setProducts(res.data.items);
+      setTotal(res.data.itemCount);
     });
-  }, []);
+  }, [page, limit]);
 
   return (
     <main>
@@ -37,12 +42,24 @@ const Home = ({}) => {
       </section>
       <section className="d-flex justify-content-center align-items-center p-5 flex-column gap-5">
         <h2>Our Products</h2>
-        <div className="d-flex gap-5 flex-wrap">
+        <div className="d-flex gap-5 flex-wrap justify-content-center align-items-center">
           {products.map((product: any) => (
             <ProductCard key={product.id} {...product} />
           ))}
         </div>
       </section>
+      <section className="d-flex justify-content-center align-items-center mb-5">
+        <button
+          className="outline_btn_layout"
+          onClick={() => {
+            setLimit(limit + 4);
+          }}
+          disabled={limit >= total}
+        >
+          Show More
+        </button>
+      </section>
+      <WarrantyCard />
     </main>
   );
 };

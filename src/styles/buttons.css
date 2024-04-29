@@ -1,0 +1,26 @@
+.outline_btn_layout {
+  margin: 4px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 12px;
+  gap: 10px;
+  min-width: 116px;
+  height: 40px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  border: 1px solid #b88e2f;
+  color: #b88e2f;
+}
+
+.outline_btn_layout:hover {
+  background-color: #b88e2f;
+  color: white;
+}
+
+.outline_btn_layout:disabled {
+  border: 1px solid #f0f0f0;
+  color: white;
+  cursor: not-allowed;
+}

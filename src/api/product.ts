@@ -8,11 +8,19 @@ export const getProduct = () => {
 export const getProductByCategory = (
   page: number,
   limit: number,
-  categoryId: number
+  categoryId: number,
+  attributeOrder: string,
+  order: string
 ) => {
   return apiRequireds.getMethodWithParams(`${URLS.PRODUCT}/filter`, {
     page,
     limit,
     categoryId,
+    attributeOrder,
+    order,
   });
+};
+
+export const getProductById = (id: number) => {
+  return apiRequireds.getMethod(`${URLS.PRODUCT}/${id}`);
 };
