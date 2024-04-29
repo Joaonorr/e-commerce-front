@@ -1,0 +1,13 @@
+.home_hero {
+  background-image: url("/img/background_home.png");
+  background-position: center;
+  background-size: fill;
+  height: 500px;
+}
+
+.home_hero_content {
+  background-color: #fff3e3;
+  border-radius: 10px 10px 0 0;
+  height: 60%;
+  width: 45%;
+}
