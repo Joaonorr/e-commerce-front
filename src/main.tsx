@@ -8,9 +8,11 @@ import "./styles/global.css";
 import "./styles/home.css";
 import "./styles/buttons.css";
 import "./styles/pagination.css";
+import "./styles/product.css";
+import "./styles/shop.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <Router />
-  </React.StrictMode>
+  // <React.StrictMode>
+  <Router />
+  // </React.StrictMode>
 );
