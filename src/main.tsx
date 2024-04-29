@@ -1,8 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Router from "./routes";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    hello world
-  </React.StrictMode>,
-)
+    <Router />
+  </React.StrictMode>
+);
