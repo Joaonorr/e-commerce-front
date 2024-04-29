@@ -4,9 +4,11 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound/index.tsx";
 import Product from "./pages/Product/index.tsx";
 import Shop from "./pages/Shop/index.tsx";
+import Header from "./components/Header/index.tsx";
 
 const Router = () => (
   <BrowserRouter>
+    <Header />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/shop" element={<Shop />} />
