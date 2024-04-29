@@ -5,6 +5,7 @@ import NotFound from "./pages/NotFound/index.tsx";
 import Product from "./pages/Product/index.tsx";
 import Shop from "./pages/Shop/index.tsx";
 import Header from "./components/Header/index.tsx";
+import Footer from "./components/Footer/index.tsx";
 
 const Router = () => (
   <BrowserRouter>
@@ -15,6 +16,7 @@ const Router = () => (
       <Route path="/product" element={<Product />} />
       <Route path="/*" element={<NotFound />} />
     </Routes>
+    <Footer />
   </BrowserRouter>
 );
 
